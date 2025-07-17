@@ -1,3 +1,18 @@
+<?php
+session_start();
+include_once '../conexao.php';
+$usuario_id = $_SESSION['usuario_id'] ?? null;
+$usuario_nome = 'Usuário';
+$foto = 'avatar.png';
+if ($usuario_id) {
+  $res = $conn->query("SELECT nome, foto FROM usuarios WHERE id=$usuario_id");
+  if ($res && $res->num_rows > 0) {
+    $row = $res->fetch_assoc();
+    $usuario_nome = $row['nome'];
+    if (!empty($row['foto'])) $foto = $row['foto'];
+  }
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,8 +26,8 @@
   <div class='ms-auto'>
     <div class='dropdown'>
       <a class='d-flex align-items-center text-decoration-none dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
-        <img src='/controle_estoque_ti/assets/img/avatar.png' class='avatar me-2'>
-        <span>Usuário</span>
+        <img src='/controle_estoque_ti/assets/uploads/usuarios/<?= $foto ?>' class='avatar me-2'>
+        <span><?= $usuario_nome ?></span>
       </a>
       <ul class='dropdown-menu dropdown-menu-end'>
         <li><a class='dropdown-item' href='/controle_estoque_ti/usuarios/perfil.php'>Meu Perfil</a></li>
