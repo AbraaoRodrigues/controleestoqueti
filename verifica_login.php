@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'conexao.php';
+include 'includes/conexao.php';
 
 $usuario = $_POST['usuario'];
 $senha = hash('sha256', $_POST['senha']);
@@ -25,4 +25,3 @@ if ($result && $result->num_rows === 1) {
     header('Location: index.php?erro=1');
     exit();
 }
-?>
