@@ -1,0 +1,1 @@
+<?php $conn = new mysqli('localhost', 'root', '', 'controle_estoque_ti'); ?>
