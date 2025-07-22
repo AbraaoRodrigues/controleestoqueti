@@ -1,7 +1,6 @@
 <?php
-include '../includes/header.php';
 include '../verifica_login.php';
-include '../conexao.php';
+include '../includes/header.php';
 
 $itens = $conn->query("SELECT i.id, i.codigo_item, i.nome, c.nome AS categoria FROM itens i LEFT JOIN categorias c ON i.categoria_id = c.id ORDER BY i.nome");
 ?>
@@ -18,12 +17,12 @@ $itens = $conn->query("SELECT i.id, i.codigo_item, i.nome, c.nome AS categoria F
       </tr>
     </thead>
     <tbody>
-      <?php while($i = $itens->fetch_assoc()): ?>
-      <tr>
-        <td><?= $i['codigo_item'] ?></td>
-        <td><?= $i['nome'] ?></td>
-        <td><?= $i['categoria'] ?></td>
-      </tr>
+      <?php while ($i = $itens->fetch_assoc()): ?>
+        <tr>
+          <td><?= $i['codigo_item'] ?></td>
+          <td><?= $i['nome'] ?></td>
+          <td><?= $i['categoria'] ?></td>
+        </tr>
       <?php endwhile; ?>
     </tbody>
   </table>

@@ -1,5 +1,10 @@
 <?php
 session_start();
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
+exit();
+
 include 'includes/conexao.php';
 
 $usuario = $_POST['usuario'];
