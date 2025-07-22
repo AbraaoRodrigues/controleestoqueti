@@ -1,7 +1,6 @@
 <?php
 include '../includes/header.php';
-include '../verifica_login.php';
-include '../conexao.php';
+include '../includes/init.php';
 
 // Consulta categorias, fornecedores, unidades de medida
 $categorias = $conn->query("SELECT id, nome FROM categorias ORDER BY nome");
@@ -31,8 +30,8 @@ $unidades = $conn->query("SELECT id, nome FROM unidades_medida ORDER BY nome");
         <label>Categoria</label>
         <select name="categoria_id" class="form-select">
           <option value="">Selecione</option>
-          <?php while($cat = $categorias->fetch_assoc()): ?>
-          <option value="<?= $cat['id'] ?>"><?= $cat['nome'] ?></option>
+          <?php while ($cat = $categorias->fetch_assoc()): ?>
+            <option value="<?= $cat['id'] ?>"><?= $cat['nome'] ?></option>
           <?php endwhile; ?>
         </select>
       </div>
@@ -44,8 +43,8 @@ $unidades = $conn->query("SELECT id, nome FROM unidades_medida ORDER BY nome");
         <label>Unidade de Medida</label>
         <select name="unidade_medida_id" class="form-select">
           <option value="">Selecione</option>
-          <?php while($um = $unidades->fetch_assoc()): ?>
-          <option value="<?= $um['id'] ?>"><?= $um['nome'] ?></option>
+          <?php while ($um = $unidades->fetch_assoc()): ?>
+            <option value="<?= $um['id'] ?>"><?= $um['nome'] ?></option>
           <?php endwhile; ?>
         </select>
       </div>
@@ -54,8 +53,8 @@ $unidades = $conn->query("SELECT id, nome FROM unidades_medida ORDER BY nome");
       <label>Fornecedor Habitual</label>
       <select name="fornecedor_id" class="form-select">
         <option value="">Selecione</option>
-        <?php while($f = $fornecedores->fetch_assoc()): ?>
-        <option value="<?= $f['id'] ?>"><?= $f['nome'] ?></option>
+        <?php while ($f = $fornecedores->fetch_assoc()): ?>
+          <option value="<?= $f['id'] ?>"><?= $f['nome'] ?></option>
         <?php endwhile; ?>
       </select>
     </div>

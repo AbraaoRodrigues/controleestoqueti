@@ -1,9 +1,13 @@
 <?php
-session_start();
-$usuario_nome = 'Usuário';
-$foto = 'avatar.png';
-$perfil_id = $_SESSION['perfil_id'] ?? 1;
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
+
+$usuario_nome = $_SESSION['usuario'] ?? 'Usuário';
+$foto = $_SESSION['foto'] ?? 'avatar.png';
+$perfil_id = $_SESSION['perfil_id'] ?? 0;
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -11,10 +15,6 @@ $perfil_id = $_SESSION['perfil_id'] ?? 1;
   <meta charset='utf-8'>
   <link rel='stylesheet' href='/controle_estoque_ti/assets/css/style.css'>
   <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
-
-</html>
 
 </head>
 

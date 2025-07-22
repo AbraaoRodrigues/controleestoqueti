@@ -41,7 +41,7 @@ $msg = isset($_GET['erro']) ? 'Usuário ou senha inválidos!' : '';
       <?php if ($msg): ?>
         <div class="alert alert-danger text-center" role="alert"><?= $msg ?></div>
       <?php endif; ?>
-      <form method="POST" action="verifica_login.php">
+      <form method="POST" action="includes/processa_login.php">
         <div class="mb-3">
           <label for="usuario" class="form-label">Usuário</label>
           <input type="text" name="usuario" class="form-control" required>

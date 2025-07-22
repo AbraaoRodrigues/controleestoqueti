@@ -1,5 +1,5 @@
 <?php
-include '../verifica_login.php';
+include '../includes/init.php';
 include '../includes/header.php';
 
 $itens = $conn->query("SELECT i.id, i.codigo_item, i.nome, c.nome AS categoria FROM itens i LEFT JOIN categorias c ON i.categoria_id = c.id ORDER BY i.nome");

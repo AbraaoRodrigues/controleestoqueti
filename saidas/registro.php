@@ -1,7 +1,6 @@
 <?php
 include '../includes/header.php';
-include '../verifica_login.php';
-include '../includes/conexao.php';
+include '../includes/init.php';
 
 $itens = $conn->query("SELECT id, nome FROM itens ORDER BY nome");
 $secretarias = $conn->query("SELECT id, nome FROM secretarias ORDER BY nome");

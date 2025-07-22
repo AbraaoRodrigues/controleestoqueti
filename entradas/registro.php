@@ -1,5 +1,5 @@
 <?php
-include '../verifica_login.php';
+include '../includes/init.php';
 include '../includes/header.php';
 
 $itens = $conn->query("SELECT id, nome FROM itens ORDER BY nome");

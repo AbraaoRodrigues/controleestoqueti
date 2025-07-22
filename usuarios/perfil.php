@@ -1,6 +1,7 @@
 <?php
+include '../includes/init.php';
 include '../includes/header.php';
-include '../verifica_login.php';
+
 ?>
 
 <div class="container mt-4">
