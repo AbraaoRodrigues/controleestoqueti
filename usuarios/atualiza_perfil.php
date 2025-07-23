@@ -1,6 +1,5 @@
 <?php
-include '../conexao.php';
-include '../verifica_login.php';
+include '../includes/init.php';
 
 session_start();
 $id = $_SESSION['usuario_id'];
@@ -30,4 +29,3 @@ VALUES ($id, 'atualizou', 'perfil', $id, '$desc', '$ip', '$ua')");
 
 header('Location: perfil.php');
 exit();
-?>
