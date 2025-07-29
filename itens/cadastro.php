@@ -19,7 +19,7 @@ $marcas = $conn->query("SELECT id, nome FROM marcas ORDER BY nome");
     <div class="row">
       <div class="col-md-4 mb-3">
         <label>Código (automático):</label>
-        <input type="text" value="<?= $proximo_id ?>" readonly class="form-control">
+        <input type="text" name="codigo_item" value="<?= $proximo_id ?>" readonly class="form-control">
       </div>
       <div class="col-md-8 mb-3">
         <label>Nome do Item</label>
